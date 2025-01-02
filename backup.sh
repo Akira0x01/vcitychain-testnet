@@ -21,14 +21,14 @@ VOLUME_NAME="${CONTAINER_NAME}-volume"
 mkdir -p "$BACKUP_DIR"
 
 # 生成备份文件名
-BACKUP_FILE="$BACKUP_DIR/${VOLUME_NAME}_backup_$(date +%Y%m%d_%H%M%S).tar.gz"
+BACKUP_FILE="${VOLUME_NAME}_backup_$(date +%Y%m%d_%H%M%S).tar.gz"
 
 # 检查命名卷是否存在
 if docker volume ls | grep -q "$VOLUME_NAME"; then
     # 使用 Docker 运行一个临时容器来创建 tar 归档文件
     docker run --rm -v "$VOLUME_NAME":/data -v "$BACKUP_DIR":/backup alpine:latest /bin/sh -c '
         echo "Creating backup of volume $VOLUME_NAME..."
-        tar -czf /backup'"${BACKUP_FILE}"' -C /data .
+        tar -czf /backup/'"${BACKUP_FILE}"' -C /data .
         echo "Backup complete."
     '
 
