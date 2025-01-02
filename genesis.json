@@ -70,7 +70,7 @@
         "burnContractDestinationAddress": "0x0000000000000000000000000000000000000000"
     },
     "bootnodes": [
-        "/ip4/127.0.0.1/tcp/10006/p2p/16Uiu2HAm4rovZtyEEjy4vqGxvEtFdChTugZEosbjSG1JX1wpLEUJ",
-        "/ip4/127.0.0.1/tcp/20006/p2p/16Uiu2HAm54fsrSe2QKmbZGmzDygTvtv5UDyXerkiw2s5svq8vXDQ"
+        "/dns/node2.vcity.app/tcp/1478/p2p/16Uiu2HAm4rovZtyEEjy4vqGxvEtFdChTugZEosbjSG1JX1wpLEUJ",
+        "/dns/node5.vcity.app/tcp/1478/p2p/16Uiu2HAm54fsrSe2QKmbZGmzDygTvtv5UDyXerkiw2s5svq8vXDQ"
     ]
 }

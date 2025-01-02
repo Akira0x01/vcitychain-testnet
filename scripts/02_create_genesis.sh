@@ -3,6 +3,8 @@
 BIN="./polygon-edge"
 GENESIS="./genesis.json"
 
+rm -f $GENESIS
+
 $BIN genesis \
     --name "vcity-testnet" \
     --consensus ibft \
@@ -17,5 +19,5 @@ $BIN genesis \
     --validators=0xA4d6DD83875af6f29f1bf83ec51d343507702ab7 \
     --validators=0x0e4f49785d6Ca8F2d00079083F480F313049B406 \
     --validators=0x1b6B530660dd99d5188296867e66FB99556F9CBD \
-    --bootnode /ip4/127.0.0.1/tcp/10006/p2p/16Uiu2HAm4rovZtyEEjy4vqGxvEtFdChTugZEosbjSG1JX1wpLEUJ \
-    --bootnode /ip4/127.0.0.1/tcp/20006/p2p/16Uiu2HAm54fsrSe2QKmbZGmzDygTvtv5UDyXerkiw2s5svq8vXDQ
+    --bootnode /dns/node2.vcity.app/tcp/1478/p2p/16Uiu2HAm4rovZtyEEjy4vqGxvEtFdChTugZEosbjSG1JX1wpLEUJ \
+    --bootnode /dns/node5.vcity.app/tcp/1478/p2p/16Uiu2HAm54fsrSe2QKmbZGmzDygTvtv5UDyXerkiw2s5svq8vXDQ

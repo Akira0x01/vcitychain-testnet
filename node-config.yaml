@@ -1,14 +1,14 @@
 chain_config: ./genesis.json
 secrets_config: ""
-data_dir: "./nodes/test-chain-3"
+data_dir: "./test-chain"
 block_gas_target: "0x3938700"
-grpc_addr: "0.0.0.0:30005"
-jsonrpc_addr: "0.0.0.0:30007"
+grpc_addr: "0.0.0.0:9632"
+jsonrpc_addr: "0.0.0.0:8545"
 telemetry:
-  prometheus_addr: ""
+  prometheus_addr: "0.0.0.0:5001"
 network:
   no_discover: false
-  libp2p_addr: 0.0.0.0:30006
+  libp2p_addr: 0.0.0.0:1478
   nat_addr: ""
   dns_addr: ""
   max_peers: -1
