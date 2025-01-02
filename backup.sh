@@ -28,7 +28,7 @@ if docker volume ls | grep -q "$VOLUME_NAME"; then
     # 使用 Docker 运行一个临时容器来创建 tar 归档文件
     docker run --rm -v "$VOLUME_NAME":/data -v "$BACKUP_DIR":/backup alpine:latest /bin/sh -c '
         echo "Creating backup of volume $VOLUME_NAME..."
-        tar -czf /backup/'"${BACKUP_FILE}"' -C /data .
+        tar -czf /backup'"${BACKUP_FILE}"' -C /data .
         echo "Backup complete."
     '
 
