@@ -10,6 +10,7 @@ fi
 IMAGE_NAME="$1"
 # 备份文件路径
 BACKUP_FILE_PATH="$2"
+BACKUP_FILE_NAME=$(basename "$BACKUP_FILE_PATH")
 
 # 构建命名卷名称
 VOLUME_NAME="${IMAGE_NAME}-volume"
@@ -32,7 +33,7 @@ fi
 # 使用 Docker 运行一个临时容器来解压 tar 归档文件
 docker run --rm -v "$VOLUME_NAME":/data -v "$(dirname "$BACKUP_FILE_PATH")":/backup alpine:latest /bin/sh -c '
     echo "Restoring backup from /backup/'"${BACKUP_FILE_PATH}"' to volume /data..."
-    tar -xzf /backup/'"${BACKUP_FILE_PATH}"' -C /data
+    tar -xzf /backup/'"${BACKUP_FILE_NAME}"' -C /data
     echo "Restore complete."
 '
 
